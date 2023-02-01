@@ -4,7 +4,7 @@ import { AllContext } from './context';
 
 const Expenseform = () => {
 
-const { expCategories, vatRates, setExpenses } = useContext(AllContext) as AllContextType
+const { expCategories, vatRates } = useContext(AllContext) as AllContextType
 
 const [category, setCategory] = useState<string>();
 const [vat, setVat] = useState<number>();
@@ -17,31 +17,31 @@ const handleVat = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setVat(+e.target.value);
 };
 
+const addExpense = (e: React.MouseEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const target = e.target as typeof e.target & {
+        description: { value: string };
+        amount: { value: number };
+        date: { value: string };
+    };
+    const data = {
+        _id: Date.now(),
+        category: category,
+        description: target.description.value,
+        amount: target.amount.value,
+        vat: vat,
+        date: target.date.value,
+        googleId: 'string',
+    }
+    fetch(`http://localhost:8080/api/expenses`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    })
+}
+
   return (
-    <form onSubmit={(e: React.SyntheticEvent) => {
-        e.preventDefault();
-        const target = e.target as typeof e.target & {
-            description: { value: string };
-            amount: { value: number };
-            date: { value: string };
-        };
-        const data = {
-            _id: Date.now(),
-            category: category,
-            description: target.description.value,
-            amount: target.amount.value,
-            vat: vat,
-            date: target.date.value,
-            googleId: 'string',
-        }
-        fetch(`http://localhost:8080/api/expenses`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-        })
-        console.log(data)
-        // setExpenses([data])
-    }}>
+    <form onSubmit={addExpense}>
     <label>Date</label>
     <input type="date" name='date'></input>
     <label>Category</label>
@@ -70,7 +70,7 @@ const handleVat = (e: React.ChangeEvent<HTMLSelectElement>) => {
             ))}
     </select>
     <button type="submit">Submit Expense</button>
-</form>
+    </form>
   )
 }
 

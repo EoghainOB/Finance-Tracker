@@ -12,30 +12,30 @@ const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setCategory(e.target.value);
 };
 
+const addIncome = (e: React.MouseEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const target = e.target as typeof e.target & {
+        description: { value: string };
+        amount: { value: number };
+        date: { value: string };
+    };
+    const data = {
+        _id: Date.now(),
+        category: category,
+        description: target.description.value,
+        amount: target.amount.value,
+        date: target.date.value,
+        googleId: 'string',
+    }
+    fetch(`http://localhost:8080/api/income`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    })
+}
+
   return (
-    <form onSubmit={(e: React.SyntheticEvent) => {
-        e.preventDefault();
-        const target = e.target as typeof e.target & {
-            description: { value: string };
-            amount: { value: number };
-            date: { value: string };
-        };
-        const data = {
-            _id: Date.now(),
-            category: category,
-            description: target.description.value,
-            amount: target.amount.value,
-            date: target.date.value,
-            googleId: 'string',
-        }
-        fetch(`http://localhost:8080/api/income`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-        })
-        console.log(data)
-        // setExpenses([data])
-    }}>
+    <form onSubmit={addIncome}>
     <label>Date</label>
     <input type="date" name='date'></input>
     <label>Category</label>
