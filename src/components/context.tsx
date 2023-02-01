@@ -27,9 +27,17 @@ const Context = ({ children }: any) => {
     }
     expenseApi()
   }, [])
-    
+
+  const [expCategories] = useState<string[]>([
+    'Meals & Entertainment', 'Equipment', 'Travel & Accommodation'
+  ]);
+ 
+  const [incomeCategories] = useState<string[]>(['Services', 'Product', 'Salary']);
+
+  const [vatRates] = useState<number[]>([0, 19, 21]);
+
   return (
-    <AllContext.Provider value={{ expenses, income }}>
+    <AllContext.Provider value={{ expenses, setExpenses, income, setIncome, expCategories, incomeCategories, vatRates }}>
         <App />
     </AllContext.Provider>
   )

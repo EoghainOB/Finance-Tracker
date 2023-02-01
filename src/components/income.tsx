@@ -10,10 +10,10 @@ const Income = () => {
     <ul>
         {income.map((exp, index) => (
         <li key={index}>
+        <h5>{exp.date}</h5>
         <h5>{exp.category}</h5>
         <h3>{exp.description}</h3>
-        <h3>€ {exp.amount}</h3>
-        <h3>VAT {exp.vat}%</h3>
+        <h3>€ {exp.amount.toFixed(2)}</h3>
         </li>
         ))
         }

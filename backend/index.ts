@@ -20,7 +20,7 @@ async function main() {
     category: String,
     description: String,
     amount: Number,
-    vat: Number,
+    date: String,
     googleId: String,
   });
 
@@ -99,6 +99,7 @@ async function main() {
     description: String,
     amount: Number,
     vat: Number,
+    date: String,
     googleId: String,
   }]);
 

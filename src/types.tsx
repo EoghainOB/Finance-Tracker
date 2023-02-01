@@ -14,7 +14,8 @@ export interface incomeTypes {
     category: string,
     description: string,
     amount: number,
-    vat: number, 
+    date: string,
+    googleId: string,
 }
 
 export interface expenseTypes {
@@ -23,11 +24,16 @@ export interface expenseTypes {
     description: string,
     amount: number,
     vat: number,
+    date: string,
+    googleId: string,
 }
 
 export type AllContextType = {
-    // profile: userTypes
     income: incomeTypes[]
     expenses: expenseTypes[]
-    // setProfile: Dispatch<SetStateAction<userTypes>>
+    expCategories: string[]
+    incomeCategories: string[]
+    vatRates: number[]
+    setExpenses: Dispatch<SetStateAction<expenseTypes[]>>
+    setIncome: Dispatch<SetStateAction<incomeTypes[]>>
 }

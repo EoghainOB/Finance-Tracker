@@ -3,7 +3,7 @@ export interface incomeTypes {
     category: string,
     description: string,
     amount: number,
-    vat: number, 
+    date: string,
     googleId: string,
 }
 
@@ -13,6 +13,7 @@ export interface expenseTypes {
     description: string,
     amount: number,
     vat: number,
+    date: string,
     googleId: string,
 }
 
