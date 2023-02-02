@@ -8,14 +8,16 @@ import Login from "./login";
 const Header = () => {
   return (
     <header>
-      <h1>Finance</h1>
-      <Login
-        loginSuccess={function (
-          response: GoogleLoginResponse | GoogleLoginResponseOffline
-        ): void {
-          throw new Error("Function not implemented.");
-        }}
-      />
+      <div className="loginButton">
+        <Login
+          loginSuccess={function (
+            response: GoogleLoginResponse | GoogleLoginResponseOffline
+          ): void {
+            throw new Error("Function not implemented.");
+          }}
+        />
+      </div>
+      <h1>Finance Tracker</h1>
     </header>
   );
 };

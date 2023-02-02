@@ -6,6 +6,8 @@ export const AllContext = createContext<AllContextType | null>(null);
 
 const Context = ({ children }: any) => {
   const [profile, setProfile] = useState<string>();
+  const [expUpdate, setExpUpdate] = useState<number>();
+  const [incUpdate, setIncUpdate] = useState<number>();
 
   const [income, setIncome] = useState<incomeTypes[]>([]);
 
@@ -18,7 +20,7 @@ const Context = ({ children }: any) => {
       setIncome([...filtered]);
     };
     incomeApi();
-  }, [profile]);
+  }, [profile, incUpdate]);
 
   const [expenses, setExpenses] = useState<expenseTypes[]>([]);
 
@@ -31,7 +33,7 @@ const Context = ({ children }: any) => {
       setExpenses([...filtered]);
     };
     expenseApi();
-  }, [profile]);
+  }, [profile, expUpdate]);
 
   const [expCategories] = useState<string[]>([
     "Meals & Entertainment",
@@ -55,6 +57,10 @@ const Context = ({ children }: any) => {
         setExpenses,
         income,
         setIncome,
+        //@ts-ignore
+        setIncUpdate,
+        //@ts-ignore
+        setExpUpdate,
         //@ts-ignore
         profile,
         //@ts-ignore

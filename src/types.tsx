@@ -38,4 +38,6 @@ export type AllContextType = {
   setExpenses: Dispatch<SetStateAction<expenseTypes[]>>;
   setIncome: Dispatch<SetStateAction<incomeTypes[]>>;
   setProfile: Dispatch<SetStateAction<string>>;
+  setExpUpdate: Dispatch<SetStateAction<number>>;
+  setIncUpdate: Dispatch<SetStateAction<number>>;
 };

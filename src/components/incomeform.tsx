@@ -2,8 +2,8 @@ import React, { useState, useContext } from "react";
 import { AllContextType } from "../types";
 import { AllContext } from "./context";
 
-const Incomeform = () => {
-  const { incomeCategories, profile } = useContext(
+const Incomeform = ({ cancelForm }: any) => {
+  const { incomeCategories, profile, setIncUpdate } = useContext(
     AllContext
   ) as AllContextType;
 
@@ -33,29 +33,44 @@ const Incomeform = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     });
+    setIncUpdate(data._id);
   };
 
   return (
-    <form onSubmit={addIncome}>
-      <label>Date</label>
-      <input type="date" name="date"></input>
-      <label>Category</label>
-      <select onChange={handleChange}>
-        <option value="">Choose</option>
-        {incomeCategories.map((option) => (
-          <option key={option} value={option}>
-            {option}
-          </option>
-        ))}
-      </select>
-      <br />
-      <label>Description</label>
-      <input type="text" name="description"></input>
-      <label>Amount</label>
-      <input type="number" name="amount"></input>
-      <br />
-      <button type="submit">Submit Income</button>
-    </form>
+    <>
+      <form className="incomeForm" onSubmit={addIncome}>
+        <div className="inputIncDate">
+          <label>Date</label>
+          <input type="date" name="date" />
+        </div>
+        <div className="inputIncCategory">
+          <label>Category</label>
+          <select onChange={handleChange}>
+            <option value="">Choose</option>
+            {incomeCategories.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="inputIncDescription">
+          <label>Description</label>
+          <input type="text" name="description" />
+        </div>
+        <div className="inputIncAmount">
+          <label>Amount</label>
+          <input type="number" name="amount" />
+        </div>
+        <br />
+        <div className="inputIncButtons">
+          <button type="submit">Submit Income</button>
+          <button type="button" onClick={cancelForm}>
+            Cancel
+          </button>
+        </div>
+      </form>
+    </>
   );
 };
 

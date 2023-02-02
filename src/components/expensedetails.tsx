@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { expenseTypes } from "../types";
+import React, { useContext, useEffect, useState } from "react";
+import { AllContextType, expenseTypes } from "../types";
+import { AllContext } from "./context";
 
 export type Props = {
   exp: expenseTypes;
 };
 
 const Expensedetails = ({ exp }: Props) => {
+  const { setExpUpdate } = useContext(AllContext) as AllContextType;
+
   const [isShownExp, setIsShownExp] = useState<boolean>(false);
 
   const changeExpenseEdit = () => {
@@ -40,6 +43,7 @@ const Expensedetails = ({ exp }: Props) => {
       body: JSON.stringify(data),
     });
     changeExpenseEdit();
+    setExpUpdate(data._id);
   };
 
   return (
@@ -56,7 +60,7 @@ const Expensedetails = ({ exp }: Props) => {
             <h4>{expenseForm.description}</h4>
           </div>
           <div className="detailsAmount">
-            <h4>€ {expenseForm.amount.toFixed(2)}</h4>
+            <h4>€ {expenseForm.amount}</h4>
           </div>
           <div className="detailsButton">
             <button onClick={changeExpenseEdit}>Edit</button>
