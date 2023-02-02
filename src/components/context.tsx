@@ -13,10 +13,12 @@ const Context = ({ children }: any) => {
     const incomeApi = async () => {
       const response = await fetch(`http://localhost:8080/api/income`);
       const data = await response.json();
-      setIncome([...data]);
+      //@ts-ignore
+      const filtered = data.filter((inc) => inc.googleId === profile);
+      setIncome([...filtered]);
     };
     incomeApi();
-  }, []);
+  }, [profile]);
 
   const [expenses, setExpenses] = useState<expenseTypes[]>([]);
 
@@ -24,10 +26,12 @@ const Context = ({ children }: any) => {
     const expenseApi = async () => {
       const response = await fetch(`http://localhost:8080/api/expenses`);
       const data = await response.json();
-      setExpenses([...data]);
+      //@ts-ignore
+      const filtered = data.filter((exp) => exp.googleId === profile);
+      setExpenses([...filtered]);
     };
     expenseApi();
-  }, []);
+  }, [profile]);
 
   const [expCategories] = useState<string[]>([
     "Meals & Entertainment",

@@ -18,7 +18,7 @@ const Expenseform = () => {
     setVat(+e.target.value);
   };
 
-  const addExpense = (e: React.MouseEvent<HTMLFormElement>) => {
+  const addExpense = async (e: React.MouseEvent<HTMLFormElement>) => {
     e.preventDefault();
     const target = e.target as typeof e.target & {
       description: { value: string };
@@ -34,7 +34,7 @@ const Expenseform = () => {
       date: target.date.value,
       googleId: profile,
     };
-    fetch(`http://localhost:8080/api/expenses`, {
+    await fetch(`http://localhost:8080/api/expenses`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

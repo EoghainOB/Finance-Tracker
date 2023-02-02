@@ -13,7 +13,7 @@ const Incomeform = () => {
     setCategory(e.target.value);
   };
 
-  const addIncome = (e: React.MouseEvent<HTMLFormElement>) => {
+  const addIncome = async (e: React.MouseEvent<HTMLFormElement>) => {
     e.preventDefault();
     const target = e.target as typeof e.target & {
       description: { value: string };
@@ -28,7 +28,7 @@ const Incomeform = () => {
       date: target.date.value,
       googleId: profile,
     };
-    fetch(`http://localhost:8080/api/income`, {
+    await fetch(`http://localhost:8080/api/income`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
