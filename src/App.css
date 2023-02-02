@@ -1,4 +1,87 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #d3d3d3;
+}
+
+h2 {
+  padding: 20px;
+  text-align: center;
+}
+
 li {
   list-style: none;
 }
 
+.App {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.addbuttons {
+  text-align: center;
+}
+
+header {
+  text-align: center;
+  background-color: aquamarine;
+  height: 100px;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+}
+
+button {
+  font-size: 15px;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  font-weight: bold;
+  border: none;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+button:hover {
+  background-color: rgb(255, 241, 241);
+}
+
+button:active {
+  background-color: rgb(47, 47, 47);
+  color: rgb(255, 255, 255);
+}
+
+.details {
+  background-color: rgb(240, 240, 240);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.detailsDate {
+  width: 10%;
+}
+
+.detailsCategory {
+  width: 20%;
+}
+
+.detailsDescription {
+  width: 50%;
+}
+
+.detailsAmount {
+  width: 10%;
+}
+
+.detailsButton {
+  width: 10%;
+}

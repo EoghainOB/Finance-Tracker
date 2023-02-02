@@ -1,27 +1,30 @@
-import React, { useState } from 'react';
-import Expenseform from './expenseform';
-import Incomeform from './incomeform';
+import React, { useState } from "react";
+import Expenseform from "./expenseform";
+import Incomeform from "./incomeform";
 
 const Input = () => {
-    
   const [form, setForm] = useState<string>();
 
   const selectIncome = () => {
-    setForm('income');
-    };
+    setForm("income");
+  };
 
   const selectExpense = () => {
-    setForm('expense');
-    };
+    setForm("expense");
+  };
 
   return (
-    <div>
-    <button value="income" onClick={selectIncome}>Income</button>
-    <button value="expense" onClick={selectExpense}>Expense</button>
-    {form === 'income' ? <Incomeform /> : ''}
-    {form === 'expense' ? <Expenseform /> : ''}
+    <div className="addbuttons">
+      <button value="income" onClick={selectIncome}>
+        Income
+      </button>
+      <button value="expense" onClick={selectExpense}>
+        Expense
+      </button>
+      {form === "income" ? <Incomeform /> : ""}
+      {form === "expense" ? <Expenseform /> : ""}
     </div>
-  )
-}
+  );
+};
 
-export default Input
+export default Input;
