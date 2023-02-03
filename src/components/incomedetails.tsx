@@ -30,7 +30,8 @@ const Incomedetails = ({ inc }: Props) => {
     setIncomeForm(inc);
   }, [inc]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+  const handleChange = (e: any) => {
+    e.preventDefault();
     const { name, value } = e.target;
     setIncomeForm({ ...incomeForm, [name]: value });
   };
@@ -85,7 +86,7 @@ const Incomedetails = ({ inc }: Props) => {
             />
           </div>
           <div className="detailsCategoryInputInc">
-            <select>
+            <select name="category" onChange={handleChange}>
               <option value="">Choose</option>
               {incomeCategories.map((option) => (
                 <option key={option} value={option}>
