@@ -7,7 +7,9 @@ export type Props = {
 };
 
 const Incomedetails = ({ inc }: Props) => {
-  const { setIncUpdate } = useContext(AllContext) as AllContextType;
+  const { setIncUpdate, incomeCategories } = useContext(
+    AllContext
+  ) as AllContextType;
 
   const [isShownInc, setIsShownInc] = useState<boolean>(false);
 
@@ -83,12 +85,14 @@ const Incomedetails = ({ inc }: Props) => {
             />
           </div>
           <div className="detailsCategoryInputInc">
-            <input
-              type="text"
-              name="category"
-              value={incomeForm.category}
-              onChange={handleChange}
-            />
+            <select>
+              <option value="">Choose</option>
+              {incomeCategories.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
           </div>
           <div className="detailsDescriptionInputInc">
             <input

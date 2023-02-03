@@ -12,6 +12,7 @@ body {
   background: #d3d3d3;
 }
 
+a,
 p,
 h1,
 h2,
@@ -21,12 +22,13 @@ input {
   font-family: "Maven Pro", sans-serif;
 }
 
-h1 {
+h1,
+h2 {
   font-family: "Cherry Swash", cursive;
 }
 
-h2 {
-  font-family: "Cherry Swash", cursive;
+.category {
+  display: flex;
 }
 
 h1 {
@@ -34,7 +36,15 @@ h1 {
   font-size: 3.5em;
   margin: 0;
   padding-top: 25px;
-  color: rgb(241, 100, 0);
+  background: linear-gradient(
+    352deg,
+    rgba(241, 100, 0, 1) 43%,
+    rgba(255, 157, 88, 1) 50%,
+    rgba(241, 100, 0, 1) 57%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-shadow: #d3d3d3;
 }
 
@@ -105,7 +115,7 @@ select:focus {
 }
 
 .addButtons {
-  width: 100%;
+  width: 250px;
   text-align: center;
 }
 
@@ -116,11 +126,15 @@ select:focus {
 
 .formContainer {
   width: 100%;
+  background: linear-gradient(
+    352deg,
+    rgb(166, 166, 166) 0%,
+    rgb(69, 69, 69) 100%
+  );
   display: flex;
   justify-content: space-around;
   padding: 10px;
   margin-top: 10px;
-  border-radius: 5px;
 }
 
 header {
@@ -176,7 +190,11 @@ button:active {
 }
 
 .listdetails {
-  background-color: rgb(241, 100, 0);
+  background: linear-gradient(
+    155deg,
+    rgb(249, 133, 50) 00%,
+    rgba(241, 100, 0, 1) 57%
+  );
   color: white;
   width: 100%;
   display: flex;
@@ -184,7 +202,7 @@ button:active {
   align-items: baseline;
   padding: 10px;
   margin-bottom: 5px;
-  border-bottom: 2px solid rgb(149, 149, 149);
+  border-bottom: 2px solid rgb(204, 98, 5);
 }
 
 .detailsDate {
@@ -332,4 +350,45 @@ select {
   width: 100%;
   padding: 15px;
   text-align: right;
+}
+
+.backbutton {
+  height: 0px;
+  width: 140px;
+  margin: 0;
+  padding: 0;
+}
+
+.backbutton h4 {
+  padding-top: 20px;
+}
+
+[role="navigation"] {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.paging {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.paging a {
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+}
+
+.next a,
+.previous a {
+  color: rgb(0, 0, 0);
+}
+
+.selected a {
+  color: rgb(241, 100, 0);
+  font-size: x-large;
 }

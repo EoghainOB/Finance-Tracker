@@ -14,7 +14,9 @@ const Overview = () => {
       <ul>
         <Input />
       </ul>
-      <h2>Income</h2>
+      <div className="category">
+        <h2>Income</h2>
+      </div>
       <ul className="incomeContainer">
         <li className="listdetails">
           <div className="detailsDate">
@@ -33,18 +35,20 @@ const Overview = () => {
             <h4>Update</h4>
           </div>
         </li>
-        {income.slice(-5).map((inc, index) => (
+        {income.slice(0, 5).map((inc, index) => (
           <div key={index}>
             <Incomedetails inc={inc} />
           </div>
         ))}
-        <Link to="/Income">
+        <Link to="/income">
           <div className="pagelink">
             <h4>View all</h4>
           </div>
         </Link>
       </ul>
-      <h2>Expenses</h2>
+      <div className="category">
+        <h2>Expenses</h2>
+      </div>
       <ul className="expenseContainer">
         <li className="listdetails">
           <div className="detailsDate">
@@ -63,13 +67,13 @@ const Overview = () => {
             <h4>Update</h4>
           </div>
         </li>
-        {expenses.slice(-5).map((exp, index) => (
+        {expenses.slice(0, 5).map((exp, index) => (
           <div key={index}>
             <Expensedetails exp={exp} />
           </div>
         ))}
         <div className="pagelink">
-          <Link to="/Expenses">
+          <Link to="/expenses">
             <h4>View all</h4>
           </Link>
         </div>
