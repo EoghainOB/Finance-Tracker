@@ -40,15 +40,16 @@ const Expenseform = ({ cancelForm }: any) => {
       body: JSON.stringify(data),
     });
     setExpUpdate(data._id);
+    cancelForm();
   };
 
   return (
     <form className="expenseForm" onSubmit={addExpense}>
       <div className="inputExpDate">
         <label>Date</label>
+        <input type="date" name="date"></input>
       </div>
       <div className="inputExpCategory">
-        <input type="date" name="date"></input>
         <label>Category</label>
         <select onChange={handleChange}>
           <option value="">Choose</option>

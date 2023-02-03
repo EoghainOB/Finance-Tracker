@@ -21,10 +21,10 @@ const Input = () => {
     <div className="addForm">
       <div className="addButtons">
         <button value="income" onClick={selectIncome}>
-          Income
+          Add Income
         </button>
         <button value="expense" onClick={selectExpense}>
-          Expense
+          Add Expense
         </button>
       </div>
       {form === "income" ? (

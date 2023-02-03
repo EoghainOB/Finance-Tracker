@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { AllContextType } from "../types";
 import { AllContext } from "./context";
 import Expensedetails from "./expensedetails";
+import Footer from "./footer";
+import Header from "./header";
 import Input from "./input";
 
 const Expensespage = () => {
@@ -9,11 +11,10 @@ const Expensespage = () => {
 
   return (
     <div>
-      <h2>Add Income/Expense</h2>
       <ul>
         <Input />
       </ul>
-      <h2>Income</h2>
+      <h2>Expenses</h2>
       <ul>
         <li className="listdetails">
           <div className="detailsDate">

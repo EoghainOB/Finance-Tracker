@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Volkhov:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,700;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cherry+Swash:wght@700&display=swap");
 
 * {
   box-sizing: border-box;
@@ -20,21 +21,42 @@ input {
   font-family: "Maven Pro", sans-serif;
 }
 
-h1,
+h1 {
+  font-family: "Cherry Swash", cursive;
+}
+
 h2 {
-  font-family: "Volkhov", serif;
+  font-family: "Cherry Swash", cursive;
 }
 
 h1 {
   font-weight: 700;
-  font-size: 3em;
-  padding: 10px;
+  font-size: 3.5em;
+  margin: 0;
+  padding-top: 25px;
+  color: rgb(241, 100, 0);
+  text-shadow: #d3d3d3;
+}
+
+header h2 {
+  font-family: "Maven Pro", sans-serif;
+  font-size: small;
+  padding: 0;
+  margin: 0;
+  color: white;
+  text-align: center;
+  font-weight: 400;
 }
 
 h2 {
   padding: 20px;
   text-align: center;
   font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 li {
@@ -66,9 +88,10 @@ select:focus {
 .incomeForm {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: end;
   flex-wrap: wrap;
   width: 100%;
+  padding-bottom: 10px;
 }
 
 .addForm {
@@ -95,7 +118,6 @@ select:focus {
   width: 100%;
   display: flex;
   justify-content: space-around;
-  background-color: rgb(23, 62, 189);
   padding: 10px;
   margin-top: 10px;
   border-radius: 5px;
@@ -103,9 +125,13 @@ select:focus {
 
 header {
   text-align: center;
-  background-color: rgb(255, 255, 255);
-  height: 100px;
-  border-bottom: solid 1px black;
+  background: linear-gradient(
+    352deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(75, 75, 75, 1) 100%
+  );
+  height: 160px;
+  border-bottom: solid 5px rgb(228, 80, 0);
 }
 
 footer {
@@ -130,7 +156,8 @@ button {
 }
 
 button:hover {
-  background-color: rgb(255, 241, 241);
+  background-color: rgb(241, 100, 0);
+  color: rgb(255, 255, 255);
 }
 
 button:active {
@@ -149,7 +176,7 @@ button:active {
 }
 
 .listdetails {
-  background-color: rgb(23, 62, 189);
+  background-color: rgb(241, 100, 0);
   color: white;
   width: 100%;
   display: flex;
@@ -157,6 +184,7 @@ button:active {
   align-items: baseline;
   padding: 10px;
   margin-bottom: 5px;
+  border-bottom: 2px solid rgb(149, 149, 149);
 }
 
 .detailsDate {
@@ -177,7 +205,53 @@ button:active {
 
 .detailsButton {
   width: 10%;
+  text-align: center;
+}
+
+.detailsDateInputInc {
+  width: 12%;
+}
+
+.detailsCategoryInputInc {
+  width: 20%;
+}
+
+.detailsDescriptionInputInc {
+  width: 36%;
+}
+
+.detailsAmountInputInc {
+  width: 10%;
+}
+
+.detailsButtonInputInc {
+  width: 18%;
   text-align: right;
+}
+
+.detailsDateInputExp {
+  width: 12%;
+}
+
+.detailsCategoryInputExp {
+  width: 17%;
+}
+
+.detailsDescriptionInputExp {
+  width: 34%;
+}
+
+.detailsAmountInputExp {
+  width: 9%;
+}
+
+.detailsVatInputExp {
+  width: 5%;
+}
+
+.detailsButtonInputExp {
+  width: 18%;
+  text-align: center;
 }
 
 input {
@@ -199,43 +273,63 @@ input:focus {
   flex-wrap: wrap;
   justify-content: right;
   margin: auto;
-  padding-top: 10px;
+  padding-top: 5px;
   height: 0px;
+}
+
+input,
+select {
+  width: 100%;
 }
 
 .inputIncDate {
   width: 15%;
 }
 
-.inputIncDate input {
-  width: 100%;
-}
-
 .inputIncCategory {
   width: 15%;
-}
-
-.inputIncCategory select {
-  width: 100%;
 }
 
 .inputIncDescription {
   width: 35%;
 }
 
-.inputIncDescription input {
-  width: 100%;
-}
-
 .inputIncAmount {
   width: 10%;
-}
-
-.inputIncAmount input {
-  width: 100%;
 }
 
 .inputIncButtons {
   width: 20%;
   text-align: center;
+}
+
+.inputExpIncDate {
+  width: 12%;
+}
+
+.inputExpCategory {
+  width: 15%;
+}
+
+.inputExpDescription {
+  width: 28%;
+}
+
+.inputExpAmount {
+  width: 10%;
+}
+
+.inputExpVat {
+  width: 6%;
+}
+
+.inputExpButtons {
+  width: 20%;
+  text-align: center;
+}
+
+.pagelink {
+  width: 100%;
+  padding: 15px;
+  text-align: right;
 }

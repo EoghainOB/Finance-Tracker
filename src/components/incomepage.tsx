@@ -9,9 +9,8 @@ const Incomepage = () => {
 
   return (
     <div>
-      <h2>Add Income/Expense</h2>
       <Input />
-      <h2>Expenses</h2>
+      <h2>Income</h2>
       <ul>
         <li className="listdetails">
           <div className="detailsDate">

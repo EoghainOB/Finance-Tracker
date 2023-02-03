@@ -17,7 +17,8 @@ const Header = () => {
           }}
         />
       </div>
-      <h1>Finance Tracker</h1>
+      <h1>Mynance</h1>
+      <h2>PERSONAL FINANCE TRACKER</h2>
     </header>
   );
 };

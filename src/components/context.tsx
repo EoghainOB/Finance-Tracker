@@ -17,6 +17,10 @@ const Context = ({ children }: any) => {
       const data = await response.json();
       //@ts-ignore
       const filtered = data.filter((inc) => inc.googleId === profile);
+      //@ts-ignore
+      filtered.sort(function (a, b) {
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
+      });
       setIncome([...filtered]);
     };
     incomeApi();
@@ -30,6 +34,10 @@ const Context = ({ children }: any) => {
       const data = await response.json();
       //@ts-ignore
       const filtered = data.filter((exp) => exp.googleId === profile);
+      //@ts-ignore
+      filtered.sort(function (a, b) {
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
+      });
       setExpenses([...filtered]);
     };
     expenseApi();

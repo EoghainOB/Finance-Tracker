@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { AllContextType } from "../types";
 import { AllContext } from "./context";
 import Expensedetails from "./expensedetails";
@@ -10,7 +11,6 @@ const Overview = () => {
 
   return (
     <div>
-      <h2>Add Income/Expense</h2>
       <ul>
         <Input />
       </ul>
@@ -30,7 +30,7 @@ const Overview = () => {
             <h4>Amount</h4>
           </div>
           <div className="detailsButton">
-            <h4>Edit</h4>
+            <h4>Update</h4>
           </div>
         </li>
         {income.slice(-5).map((inc, index) => (
@@ -38,6 +38,11 @@ const Overview = () => {
             <Incomedetails inc={inc} />
           </div>
         ))}
+        <Link to="/Income">
+          <div className="pagelink">
+            <h4>View all</h4>
+          </div>
+        </Link>
       </ul>
       <h2>Expenses</h2>
       <ul className="expenseContainer">
@@ -55,7 +60,7 @@ const Overview = () => {
             <h4>Amount</h4>
           </div>
           <div className="detailsButton">
-            <h4>Edit</h4>
+            <h4>Update</h4>
           </div>
         </li>
         {expenses.slice(-5).map((exp, index) => (
@@ -63,6 +68,11 @@ const Overview = () => {
             <Expensedetails exp={exp} />
           </div>
         ))}
+        <div className="pagelink">
+          <Link to="/Expenses">
+            <h4>View all</h4>
+          </Link>
+        </div>
       </ul>
     </div>
   );

@@ -171,12 +171,10 @@ async function main() {
       const user = await Users.find({ googleId: id });
       if (user.length > 0) {
         res.json(user);
-        console.log(user);
       } else {
         const newUser = new Users({ ...req.body });
         await newUser.save();
         res.json(newUser);
-        console.log("user created");
       }
     } catch (err) {
       console.log(err);

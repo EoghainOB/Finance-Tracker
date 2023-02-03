@@ -34,6 +34,7 @@ const Incomeform = ({ cancelForm }: any) => {
       body: JSON.stringify(data),
     });
     setIncUpdate(data._id);
+    cancelForm();
   };
 
   return (

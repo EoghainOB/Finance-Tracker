@@ -45,6 +45,7 @@ const Login: FunctionComponent<GoogleSignInComponentProps> = ({
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     });
+    navigate("/overview");
   };
 
   const onFailure = (err: any) => {

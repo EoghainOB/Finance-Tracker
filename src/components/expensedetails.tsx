@@ -34,6 +34,12 @@ const Expensedetails = ({ exp }: Props) => {
     setExpenseForm({ ...expenseForm, [name]: value });
   };
 
+  const removeExpense = async (e: { preventDefault: () => void }) => {
+    await fetch(`http://localhost:8080/api/expenses/${expenseForm._id}`, {
+      method: "DELETE",
+    }).then(() => {});
+  };
+
   const updateExpense = (e: React.MouseEvent<HTMLFormElement>) => {
     e.preventDefault();
     const data = expenseForm;
@@ -69,7 +75,7 @@ const Expensedetails = ({ exp }: Props) => {
       )}
       {isShownExp && (
         <form className="details" onSubmit={updateExpense}>
-          <div className="detailsDate">
+          <div className="detailsDateInputExp">
             <input
               type="date"
               name="date"
@@ -77,7 +83,7 @@ const Expensedetails = ({ exp }: Props) => {
               onChange={handleChange}
             />
           </div>
-          <div className="detailsCategory">
+          <div className="detailsCategoryInputExp">
             <input
               type="text"
               name="category"
@@ -85,7 +91,7 @@ const Expensedetails = ({ exp }: Props) => {
               onChange={handleChange}
             />
           </div>
-          <div className="detailsDescription">
+          <div className="detailsDescriptionInputExp">
             <input
               type="text"
               name="description"
@@ -93,13 +99,15 @@ const Expensedetails = ({ exp }: Props) => {
               onChange={handleChange}
             />
           </div>
-          <div className="detailsAmount">
+          <div className="detailsAmountInputExp">
             <input
               type="number"
               name="amount"
               value={expenseForm.amount}
               onChange={handleChange}
             />
+          </div>
+          <div className="detailsVatInputExp">
             <input
               type="number"
               name="vat"
@@ -107,9 +115,10 @@ const Expensedetails = ({ exp }: Props) => {
               onChange={handleChange}
             />
           </div>
-          <button type="submit">Save</button>
-          <div className="detailsButton">
+          <div className="detailsButtonInputExp">
+            <button type="submit">Save</button>
             <button onClick={changeExpenseEdit}>Cancel</button>
+            <button onClick={removeExpense}>Delete</button>
           </div>
         </form>
       )}

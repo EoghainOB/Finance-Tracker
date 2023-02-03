@@ -1,9 +1,11 @@
+import { Date } from "mongoose";
+
 export interface incomeTypes {
   _id: number;
   category: string;
   description: string;
   amount: number;
-  date: string;
+  date: Date;
   googleId: string;
 }
 
@@ -13,7 +15,7 @@ export interface expenseTypes {
   description: string;
   amount: number;
   vat: number;
-  date: string;
+  date: Date;
   googleId: string;
 }
 

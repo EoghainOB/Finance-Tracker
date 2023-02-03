@@ -33,6 +33,12 @@ const Incomedetails = ({ inc }: Props) => {
     setIncomeForm({ ...incomeForm, [name]: value });
   };
 
+  const removeIncome = async (e: { preventDefault: () => void }) => {
+    await fetch(`http://localhost:8080/api/income/${incomeForm._id}`, {
+      method: "DELETE",
+    }).then(() => {});
+  };
+
   const updateIncome = (e: React.MouseEvent<HTMLFormElement>) => {
     e.preventDefault();
     const data = incomeForm;
@@ -68,7 +74,7 @@ const Incomedetails = ({ inc }: Props) => {
       )}
       {isShownInc && (
         <form className="details" onSubmit={updateIncome}>
-          <div className="detailsDate">
+          <div className="detailsDateInputInc">
             <input
               type="date"
               name="date"
@@ -76,7 +82,7 @@ const Incomedetails = ({ inc }: Props) => {
               onChange={handleChange}
             />
           </div>
-          <div className="detailsCategory">
+          <div className="detailsCategoryInputInc">
             <input
               type="text"
               name="category"
@@ -84,7 +90,7 @@ const Incomedetails = ({ inc }: Props) => {
               onChange={handleChange}
             />
           </div>
-          <div className="detailsDescription">
+          <div className="detailsDescriptionInputInc">
             <input
               type="text"
               name="description"
@@ -92,7 +98,7 @@ const Incomedetails = ({ inc }: Props) => {
               onChange={handleChange}
             />
           </div>
-          <div className="detailsAmount">
+          <div className="detailsAmountInputInc">
             <input
               type="number"
               name="amount"
@@ -100,9 +106,10 @@ const Incomedetails = ({ inc }: Props) => {
               onChange={handleChange}
             />
           </div>
-          <button type="submit">Save</button>
-          <div className="detailsButton">
+          <div className="detailsButtonInputInc">
+            <button type="submit">Save</button>
             <button onClick={changeIncomeEdit}>Cancel</button>
+            <button onClick={removeIncome}>Delete</button>
           </div>
         </form>
       )}
