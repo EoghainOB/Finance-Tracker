@@ -7,7 +7,9 @@ export type Props = {
 };
 
 const Expensedetails = ({ exp }: Props) => {
-  const { setExpUpdate } = useContext(AllContext) as AllContextType;
+  const { setExpUpdate, expCategories } = useContext(
+    AllContext
+  ) as AllContextType;
 
   const [isShownExp, setIsShownExp] = useState<boolean>(false);
 
@@ -29,7 +31,8 @@ const Expensedetails = ({ exp }: Props) => {
     setExpenseForm(exp);
   }, [exp]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+  const handleChange = (e: any) => {
+    e.preventDefault();
     const { name, value } = e.target;
     setExpenseForm({ ...expenseForm, [name]: value });
   };
@@ -84,12 +87,14 @@ const Expensedetails = ({ exp }: Props) => {
             />
           </div>
           <div className="detailsCategoryInputExp">
-            <input
-              type="text"
-              name="category"
-              value={expenseForm.category}
-              onChange={handleChange}
-            />
+            <select name="category" onChange={handleChange}>
+              <option value="">Choose</option>
+              {expCategories.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
           </div>
           <div className="detailsDescriptionInputExp">
             <input
