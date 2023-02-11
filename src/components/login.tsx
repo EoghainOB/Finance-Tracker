@@ -21,8 +21,7 @@ const Login: FunctionComponent<GoogleSignInComponentProps> = ({
 }) => {
   const { profile, setProfile } = useContext(AllContext) as AllContextType;
 
-  const clientId =
-    "229934398154-207ete67jlsqrk8f498asl49dg5h7jvl.apps.googleusercontent.com";
+  const clientId = process.env.REACT_APP_API_GOOGLE_OAUTH_CLIENT_ID;
 
   useEffect(() => {
     const initClient = () => {
@@ -62,12 +61,14 @@ const Login: FunctionComponent<GoogleSignInComponentProps> = ({
     <div>
       {profile ? (
         <GoogleLogout
+          //@ts-ignore
           clientId={clientId}
           buttonText="Log out"
           onLogoutSuccess={logOutSuccess}
         />
       ) : (
         <GoogleLogin
+          //@ts-ignore
           clientId={clientId}
           buttonText="Sign in with Google"
           onSuccess={onSuccess}

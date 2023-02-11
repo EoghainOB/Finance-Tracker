@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <>
       <footer>
-        <h3>Design by Eoghain O'Briain</h3>
+        <h4>Design by Eoghain O'Briain</h4>
       </footer>
     </>
   );

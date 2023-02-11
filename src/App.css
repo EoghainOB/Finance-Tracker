@@ -65,6 +65,30 @@ h2 {
   font-weight: 400;
 }
 
+.homepage h3 {
+  text-align: left;
+  font-size: 2em;
+  padding: 10px;
+}
+
+.homepage p {
+  text-align: left;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.homepage {
+  text-align: center;
+}
+
+.homepage img {
+  width: 60%;
+  padding: 20px;
+  margin: 10px;
+  border: solid 2px rgb(198, 198, 198);
+  border-radius: 5px;
+}
+
 a {
   text-decoration: none;
   color: black;
