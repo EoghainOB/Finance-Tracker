@@ -56,7 +56,7 @@ const Incomepage = () => {
               onPageChange={handlePageClick}
               pageRangeDisplayed={2}
               pageCount={Math.ceil(pageCount)}
-              previousLabel="< Previous"
+              previousLabel="< Prev"
             />
           </div>
         )}

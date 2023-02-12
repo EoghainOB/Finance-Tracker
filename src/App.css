@@ -137,7 +137,6 @@ select:focus {
 }
 
 .addButtons {
-  width: 250px;
   text-align: center;
 }
 
@@ -330,19 +329,11 @@ select {
 }
 
 .inputIncDescription {
-  width: 35%;
+  width: 40%;
 }
 
 .inputIncAmount {
   width: 10%;
-}
-
-.inputIncButtons {
-  width: 20%;
-  text-align: right;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
 }
 
 .inputExpIncDate {
@@ -354,7 +345,7 @@ select {
 }
 
 .inputExpDescription {
-  width: 28%;
+  width: 33%;
 }
 
 .inputExpAmount {
@@ -365,8 +356,9 @@ select {
   width: 6%;
 }
 
+.inputIncButtons,
 .inputExpButtons {
-  width: 20%;
+  width: 14%;
   text-align: right;
   display: flex;
   align-items: flex-end;
@@ -388,6 +380,7 @@ select {
 
 .backbutton h4 {
   padding-top: 20px;
+  padding-left: 15px;
 }
 
 [role="navigation"] {

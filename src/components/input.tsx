@@ -23,7 +23,7 @@ const Input = () => {
       {window.location.pathname !== "/overview" && (
         <div className="backbutton">
           <Link to="/overview">
-            <h4>Back to Overview</h4>
+            <h4>&lt; Overview</h4>
           </Link>
         </div>
       )}
