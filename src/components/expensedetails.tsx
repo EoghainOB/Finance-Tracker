@@ -12,14 +12,9 @@ const Expensedetails = ({ exp }: Props) => {
   ) as AllContextType;
 
   const [isShownExp, setIsShownExp] = useState<boolean>(false);
-  const [vat, setVat] = useState<number>();
 
   const changeExpenseEdit = () => {
     setIsShownExp(!isShownExp);
-  };
-
-  const handleVat = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setVat(+e.target.value);
   };
 
   const [expenseForm, setExpenseForm] = useState<expenseTypes>({
@@ -118,7 +113,7 @@ const Expensedetails = ({ exp }: Props) => {
             />
           </div>
           <div className="detailsVatInputExp">
-            <select name="vat" onChange={handleVat}>
+            <select name="vat" onChange={handleChange}>
               <option value="">Select</option>
               {vatRates.map((option) => (
                 <option key={option} value={option}>
