@@ -123,7 +123,6 @@ select:focus {
 .incomeForm {
   display: flex;
   justify-content: space-between;
-  align-items: end;
   flex-wrap: wrap;
   width: 100%;
   padding-bottom: 10px;
@@ -150,6 +149,7 @@ select:focus {
     rgb(69, 69, 69) 100%
   );
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   padding: 10px;
   margin-top: 10px;
@@ -200,7 +200,6 @@ button:active {
 
 .details {
   background-color: rgb(240, 240, 240);
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -337,7 +336,10 @@ select {
 
 .inputIncButtons {
   width: 20%;
-  text-align: center;
+  text-align: right;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 .inputExpIncDate {
@@ -362,7 +364,10 @@ select {
 
 .inputExpButtons {
   width: 20%;
-  text-align: center;
+  text-align: right;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 .pagelink {
@@ -410,4 +415,109 @@ select {
 .selected a {
   color: rgb(241, 100, 0);
   font-size: x-large;
+}
+
+@media screen and (max-width: 950px) {
+  .content {
+    max-width: 780px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .content {
+    max-width: 400px;
+  }
+
+  .homepage img {
+    width: 100%;
+    border: none;
+    padding: 5px;
+    margin: 0;
+  }
+
+  .homepage p {
+    text-align: left;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .homepage h3 {
+    text-align: center;
+  }
+
+  .listdetails {
+    display: none;
+  }
+
+  .details {
+    margin-left: 5px;
+    margin-right: 5px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .detailsDateInputInc,
+  .detailsDate {
+    width: 35%;
+    color: rgb(249, 133, 50);
+  }
+
+  .detailsCategoryInputInc,
+  .detailsCategory {
+    width: 60%;
+    text-align: right;
+  }
+
+  .detailsDescriptionInputInc,
+  .detailsDescription {
+    width: 100%;
+  }
+
+  .detailsAmountInputInc,
+  .detailsAmount {
+    width: 30%;
+  }
+
+  .detailsAmount h4 {
+    font-size: large;
+  }
+
+  .detailsButtonInputInc,
+  .detailsButton {
+    width: 70%;
+    text-align: right;
+  }
+  .details button {
+    padding: 0;
+    color: blue;
+    background-color: rgb(240, 240, 240);
+  }
+  input {
+    margin-bottom: 5px;
+  }
+
+  .inputIncDate {
+    width: 35%;
+  }
+
+  .inputIncCategory {
+    width: 60%;
+  }
+
+  .inputIncDescription {
+    width: 100%;
+  }
+
+  .inputIncAmount {
+    width: 30%;
+  }
+
+  .inputIncButtons {
+    width: 70%;
+    text-align: right;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding-bottom: 2px;
+  }
 }
