@@ -56,7 +56,7 @@ const Incomeform = ({ cancelForm }: any) => {
           </select>
         </div>
         <div className="inputIncDescription">
-          <label>Description</label>
+          <label>Income Description</label>
           <input type="text" name="description" />
         </div>
         <div className="inputIncAmount">
@@ -65,7 +65,7 @@ const Incomeform = ({ cancelForm }: any) => {
         </div>
         <br />
         <div className="inputIncButtons">
-          <button type="submit">Submit Income</button>
+          <button type="submit">Submit</button>
           <button type="button" onClick={cancelForm}>
             Cancel
           </button>

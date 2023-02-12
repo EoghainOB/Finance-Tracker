@@ -456,23 +456,32 @@ select {
     flex-wrap: wrap;
   }
 
+  .detailsDateInputExp,
   .detailsDateInputInc,
   .detailsDate {
     width: 35%;
     color: rgb(249, 133, 50);
   }
 
+  .detailsCategoryInputExp,
   .detailsCategoryInputInc,
   .detailsCategory {
     width: 60%;
     text-align: right;
   }
 
+  .detailsDescriptionInputExp,
   .detailsDescriptionInputInc,
   .detailsDescription {
     width: 100%;
   }
 
+  .detailsAmountInputExp {
+    width: 25%;
+  }
+  .detailsVatInputExp {
+    width: 20%;
+  }
   .detailsAmountInputInc,
   .detailsAmount {
     width: 30%;
@@ -482,6 +491,10 @@ select {
     font-size: large;
   }
 
+  .detailsButtonInputExp {
+    width: 50%;
+    text-align: right;
+  }
   .detailsButtonInputInc,
   .detailsButton {
     width: 70%;
@@ -496,24 +509,33 @@ select {
     margin-bottom: 5px;
   }
 
+  .inputExpDate,
   .inputIncDate {
     width: 35%;
   }
 
+  .inputExpCategory,
   .inputIncCategory {
     width: 60%;
   }
 
+  .inputExpDescription,
   .inputIncDescription {
     width: 100%;
   }
 
+  .inputExpAmount,
   .inputIncAmount {
     width: 30%;
   }
 
+  .inputExpVat {
+    width: 20%;
+  }
+
+  .inputExpButtons,
   .inputIncButtons {
-    width: 70%;
+    width: 45%;
     text-align: right;
     display: flex;
     align-items: flex-end;

@@ -61,7 +61,7 @@ const Expenseform = ({ cancelForm }: any) => {
         </select>
       </div>
       <div className="inputExpDescription">
-        <label>Description</label>
+        <label>Expense Description</label>
         <input type="text" name="description" />
       </div>
       <div className="inputExpAmount">
@@ -80,7 +80,7 @@ const Expenseform = ({ cancelForm }: any) => {
         </select>
       </div>
       <div className="inputExpButtons">
-        <button type="submit">Submit Expense</button>
+        <button type="submit">Submit</button>
         <button type="button" onClick={cancelForm}>
           Cancel
         </button>
